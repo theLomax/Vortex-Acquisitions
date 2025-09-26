@@ -1,18 +1,25 @@
 {
-  "name": "vortex-acquisitions",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "packageManager": "pnpm@10.11.0",
-  "devDependencies": {
-    "concurrently": "^9.2.1",
-    "pug-cli": "1.0.0-alpha6",
-    "sass": "^1.93.2"
-  }
+	"name": "vortex-acquisitions",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"clean": "rimraf dist",
+		"pug": "pug src/pug/index.pug -o dist -P",
+		"sass": "sass src/scss/main.scss dist/css/main.css --style=expanded",
+		"pug:watch": "pug src/pug/index.pug -o dist -P -w",
+		"sass:watch": "sass src/scss/main.scss dist/css/main.css --watch --style=expanded",
+		"dev": "pnpm clean && concurrently \"pnpm pug:watch\" \"pnpm sass:watch\""
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"packageManager": "pnpm@10.11.0",
+	"devDependencies": {
+		"concurrently": "^9.2.1",
+		"pug-cli": "1.0.0-alpha6",
+		"rimraf": "^6.0.1",
+		"sass": "^1.93.2",
+		"serve": "^14.2.5"
+	}
 }
