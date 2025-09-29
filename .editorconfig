@@ -1,0 +1,27 @@
+# .editorconfig
+root = true
+
+# Default: use tabs for most files
+[*]
+indent_style = tab
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Pug files: use spaces (required for Pug parser)
+[*.pug]
+indent_style = space
+indent_size = 2
+
+# JSON files: use tabs (your preference)
+[*.json]
+indent_style = tab
+
+# JavaScript files
+[*.js]
+indent_style = tab
+
+# SCSS files
+[*.scss]
+indent_style = tab   
