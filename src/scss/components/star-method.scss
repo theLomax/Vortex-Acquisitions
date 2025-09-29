@@ -1,0 +1,9 @@
+.star-method {
+	ul {
+		li {
+			&::marker {
+				content: '⭐';
+			}
+		}
+	}
+}
