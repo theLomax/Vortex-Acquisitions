@@ -1,0 +1,61 @@
+[
+	{
+		"name": "Michelle Hood",
+		"rank": 1,
+		"active": true,
+		"titles": [
+			"Founder",
+			"Marketing & Transitions Strategist"
+		],
+		"summary": "Michelle blends data-driven strategy with heart-centered leadership...",
+		"specialties": [
+			"Digital Strategy",
+			"Vendor Management",
+			"Operational Integration",
+			"Owner & Team Transitions"
+		]
+	},
+	{
+		"name": "Thomas Hood",
+		"rank": 2,
+		"active": true,
+		"titles": [
+			"Co-Founder",
+			"Deal Structuring",
+			"People Operations"
+		],
+		"summary": "Thomas brings financial acumen and emotional intelligence to every deal...",
+		"specialties": [
+			"Due Diligence",
+			"Empathetic Negotiation",
+			"Team Alignment",
+			"Change Navigation"
+		]
+	},
+	{
+		"name": "Ray Hartsock",
+		"rank": 3,
+		"active": true,
+		"titles": ["Senior Advisor", "Operational Excellence & Growth"],
+		"summary": "With 40+ years of operational leadership and two U.S. patents, Ray is the steady force behind scalable growth strategies. He excels at streamlining systems, solving complex problems, and inspiring teams to perform at their best.",
+		"specialties": [
+			"Due Diligence",
+			"Empathetic Negotiation",
+			"Team Alignment",
+			"Change Navigation"
+		]
+	},
+	{
+		"name": "Sherrie Hartsock",
+		"rank": 4,
+		"active": true,
+		"titles": ["Senior Advisor", "Entrepreneurial Strategy & Exit Planning"],
+		"summary": "Sherrie has scaled multimillion-dollar service companies and built a thriving real estate portfolio. With firsthand experience buying, growing, and selling businesses, she brings empathy to the seller’s side and helps owners feel empowered during transitions.",
+		"specialties": [
+			"Business Sales", 
+			"Owner Relations", 
+			"Strategic Visioning", 
+			"Portfolio Management"
+		]
+	}
+]

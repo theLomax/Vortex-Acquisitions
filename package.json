@@ -5,18 +5,24 @@
 	"main": "index.js",
 	"scripts": {
 		"clean": "rimraf dist",
-		"pug": "pug src/pug/index.pug -o dist -P",
+		"build:team": "node tools/parse-team.js",
+		"pug": "pug src/pug/index.pug -o dist -P --obj src/data/team-processed.json",
 		"sass": "sass src/scss/main.scss dist/css/main.css --style=expanded",
-		"pug:watch": "pug src/pug/index.pug -o dist -P -w",
-		"sass:watch": "sass src/scss/main.scss dist/css/main.css --watch --style=expanded",
-		"dev": "pnpm clean && concurrently \"pnpm pug:watch\" \"pnpm sass:watch\""
+		"js": "node tools/js-to-dist.js",
+		"build": "pnpm clean && pnpm build:team && pnpm pug && pnpm sass && pnpm js",
+		"dev": "pnpm build:team && pnpm pug && chokidar \"src/**/*.{pug,scss,js}\" --ignore \"**/generated/**\" --ignore \"**/*.tmp\" --exec \"pnpm build\"",
+		"serve": "live-server dist --port=8080",
+		"dev:serve": "concurrently --kill-others --raw \"pnpm dev\" \"pnpm serve\""
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"packageManager": "pnpm@10.11.0",
 	"devDependencies": {
+		"chokidar-cli": "^3.0.0",
 		"concurrently": "^9.2.1",
+		"live-server": "^1.2.2",
+		"prettier": "^3.6.2",
 		"pug-cli": "1.0.0-alpha6",
 		"rimraf": "^6.0.1",
 		"sass": "^1.93.2",

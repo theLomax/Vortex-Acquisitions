@@ -1,5 +1,6 @@
 dist
 node_modules
+src\pug\generated
 
 # Lock files
 pnpm-lock.yaml

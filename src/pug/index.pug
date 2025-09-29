@@ -1,6 +1,7 @@
 extends layouts/landing-page
 
 include components/page
+include mixins/team
 
 block content
 	+header()
@@ -45,6 +46,9 @@ block content
 
 		+article('team')
 			h3 Meet the Team
+
+			each member in teamMembers
+				+team(member)
 
 		+article('contact')
 			h2 Ready to Talk?
