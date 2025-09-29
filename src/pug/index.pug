@@ -3,6 +3,54 @@ extends layouts/landing-page
 include components/page
 
 block content
-	+header("Vortex Acquisitions, LLC.")
+	+header()
+		h1 Vortex Acquisitions, LLC
+		h2 We Buy Boring Businesses — Quietly. Ethically. Fast.
+		p Whether you're ready to retire, step back, or simply take a breath, we help business owners exit their companies with confidence — and peace of mind.
 	+hero("Welcome!", "This is our first page.")
+
+	section
+
+		+article('about-us')
+			h2 Who We Are
+			p You’ve built something valuable. We’re here to help you transition it to the right hands.
+			p We are a small, trustworthy team — not brokers, not private equity — that acquires healthy, profitable service-based businesses #[em ($500K–$5M revenue)] and helps owners move forward without losing what matters most.
+
+		+article('star-method')
+			h2 The STAR Method™
+			h3 Our five-point approach ensures every transition is a win for:
+			ul
+				li The Business: Stability &amp; growth
+				li The Employees: Job security & cultural continuity
+				li The Customers: Reliable service & trust
+				li The Selling Owner: Fair exit, legacy protection
+				li The Buyer (Us): Responsible, long-term investment
+			p Unlike traditional buyers focused only on ROI, we prioritize people, process, and purpose — so your business keeps thriving after the ink dries.
+
+		+article('choose-vortex')
+			h2 Why Owners Choose Vortex
+			p Clean, fair offers — no hidden terms, no pressure
+			p Transitions handled with care and transparency
+			p Respect for your story, your team, and your customers
+
+		+article('process')
+			h2 Our Simple Process
+			ol
+				li Confidential intro call — no commitment
+				li Mutual NDA to protect your info
+				li Review of high-level business details
+				li Clear, STAR-aligned offer
+				li Joint planning for a smooth transition
+				li Close &amp; celebrate your next chapter
+
+		+article('team')
+			h3 Meet the Team
+
+		+article('contact')
+			h2 Ready to Talk?
+			p Let’s have a confidential, no-pressure conversation about what’s next.
+			| 📧 teams@vortexacquisitionsllc.com
+			| 📞 972-200-9263
+
+
 	+footer("© 2025 | All rights reserved")
