@@ -1,0 +1,12 @@
+// @use "variables";
+// @use "mixins";
+// @use "components/header";
+// @use "components/hero";
+// @use "components/footer";
+@use "components/star-method";
+
+body {
+	font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+}
