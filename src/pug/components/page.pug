@@ -1,12 +1,15 @@
-mixin header(title)
-	header.site-header
-		h1= title
+mixin header(className = '')
+	header.site-header(class=className)&attributes(attributes)
+		block
 
-mixin hero(title, subtitle)
-	section.hero
-		h1= title
-		p= subtitle
+mixin footer(className = '')
+	footer(class=className || null)&attributes(attributes)
+		block
 
-mixin footer(salutation)
-	footer
-		p= salutation
+mixin hero(className = '')
+	section.hero(class=className)&attributes(attributes)
+		block
+
+mixin article(className = '')
+	article(class=className || null)&attributes(attributes)
+		block
