@@ -1,0 +1,14 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.contact-split {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	gap: 1.5rem;
+	margin-block: 1.5rem;
+
+	@include mq(tablet) {
+		flex-direction: row;
+	}
+}

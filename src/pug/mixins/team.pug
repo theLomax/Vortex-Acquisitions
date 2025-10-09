@@ -6,25 +6,28 @@ mixin team(member)
 		return
 
 	.team-member(data-rank=member.rank)
-		h2 💼 #{member.name}
+		.entry
+			img(src=`assets/images/team/${member.lName}_${member.fName}.jpg`, alt=member.fName)
+			div
+				h3 #{member.fName} #{member.lName}
 
-		//- Safe titles
-		if member.titles && member.titles.length
-			.titles
-				each title, i in member.titles
-					span= title
-					if i < member.titles.length - 1
-						span &nbsp;|&nbsp;
+				//- Safe titles
+				if member.titles && member.titles.length
+					p.titles
+						each title, i in member.titles
+							span= title
+							if i < member.titles.length - 1
+								span &nbsp;#[strong.brand-1 |]&nbsp;
 
-		//- Safe summary
-		if member.summary
-			p #{member.summary}
+				//- Safe summary
+				if member.summary
+					p.summary #{member.summary}
 
-		//- Safe specialties
-		if member.specialties && member.specialties.length
-			p 
-				span 📌 Specialties:&nbsp;
-				each spec, i in member.specialties
-					span= spec
-					if i < member.specialties.length - 1
-						span &nbsp;•&nbsp;   
+				//- Safe specialties
+				if member.specialties && member.specialties.length
+					p.specialties
+						span #[strong Specialties:&nbsp;]
+						each spec, i in member.specialties
+							span.nowrap= spec
+							if i < member.specialties.length - 1
+								span !{' '}#[span.brand-1 •]&nbsp;

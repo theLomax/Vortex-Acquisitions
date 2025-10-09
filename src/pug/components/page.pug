@@ -1,5 +1,6 @@
 mixin header(className = '')
 	header.site-header(class=className)&attributes(attributes)
+		div.wrap
 		block
 
 mixin footer(className = '')
@@ -12,4 +13,5 @@ mixin hero(className = '')
 
 mixin article(className = '')
 	article(class=className || null)&attributes(attributes)
-		block
+		div.wrap
+			block

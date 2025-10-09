@@ -1,0 +1,14 @@
+
+
+.nowrap {
+	white-space: nowrap;
+}
+
+.dark {
+	background: var(--brand-2);
+	color: var(--soft-white);
+	h2, h3, h4, p, span {
+		color: var(--soft-white);
+	}
+}
+

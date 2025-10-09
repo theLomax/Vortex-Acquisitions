@@ -1,0 +1,37 @@
+@use "sass:map";
+// Define breakpoints
+$breakpoints: (
+	mobile: 320px,
+	tablet: 768px,
+	desktop: 1024px
+);
+
+// Mixin for mobile-first media queries
+@mixin mq($breakpoint, $until: null) {
+	$min: map.get($breakpoints, $breakpoint);
+
+	@if $until {
+		$max: map.get($breakpoints, $until) - 1px;
+
+		@media (min-width: $min) and (max-width: $max) {
+			@content;
+		}
+	}
+
+	@else {
+		@media (min-width: $min) {
+			@content;
+		}
+	}
+}
+
+@mixin text-wrap($value) {
+	@if $value =="balance" {
+		text-wrap: pretty;
+		text-wrap: balance;
+	}
+
+	@else {
+		text-wrap: $value;
+	}
+}

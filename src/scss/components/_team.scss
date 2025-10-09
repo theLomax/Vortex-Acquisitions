@@ -1,0 +1,85 @@
+// @use "functions";
+@use "../variables" as *;
+@use "../mixins" as *;
+@use "../helpers" as *;
+
+.team {
+
+	border-radius: .5rem 1rem 0 0;
+	h2 {
+		margin-block: 0;
+	}
+
+	&-loop {
+		display: flex;
+		flex-direction: column;
+		row-gap: 1rem;
+		align-items: center;
+	}
+
+	&-member {
+		padding-block: .5rem 1rem;
+		width: 100%;
+		max-width: $maxW;
+		margin-inline: auto;
+		corner-shape: bevel;
+		border-radius: .5rem 1rem;
+
+		&:first-of-type {
+			border-radius: 0 0 .5rem 1rem;
+		}
+
+		&:nth-of-type(odd) {
+			@extend .dark;
+		}
+	}
+
+}
+
+.entry {
+	display: flex;
+	flex-direction: column;
+	grid-template-columns: 250px auto;
+	column-gap: 2rem;
+	grid-template-areas: "img div";
+	align-items: center;
+
+	@include mq(tablet) {
+		display: grid;
+		justify-content: center;
+	}
+
+	>div {
+		max-width: 400px;
+
+		@include mq(tablet) {
+			max-width: 500px;
+		}
+	}
+
+	&:nth-of-type(even) {
+		grid-template-areas: "div img";
+		grid-template-columns: auto 250px;
+
+		>div {
+			@include mq(tablet) {
+				text-align: end;
+			}
+		}
+	}
+
+	>img {
+		width: 398px;
+		max-width: 100%;
+		grid-area: img;
+		corner-shape: bevel;
+		border-radius: 2.5rem 1rem;
+		border: 1px solid #4581a188;
+		padding: .25rem;
+	}
+}
+
+.titles,
+.specialties {
+	@include text-wrap(balance);
+}

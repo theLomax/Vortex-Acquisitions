@@ -1,0 +1,6 @@
+@use '../variables';
+@use '../helpers';
+
+footer {
+	@extend .dark;
+}

@@ -1,12 +1,83 @@
-// @use "variables";
+// @use "functions";
 // @use "mixins";
-// @use "components/header";
-// @use "components/hero";
+@use "variables" as *;
+@use "mixins" as *;
+@use "helpers" as *;
+// @use "components/heading";
+@use "components/hero";
 // @use "components/footer";
 @use "components/star-method";
+@use "components/team";
+@use "components/contact";
+@use "fonts";
 
 body {
-	font-family: sans-serif;
-	margin: 0;
+	margin-block: 0;
+	margin-inline: 0;
 	padding: 0;
+	background-color: var(--bg);
+	color: var(--text);
+	// font
+	font-family: "Red Hat Display", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: normal;
+	font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: "crimson pro";
+	font-weight: 500;
+	color: var(--brand-2);
+	margin-top: 0;
+}
+
+h2 {
+	font-size: 2rem;
+	@include text-wrap(pretty);
+
+	@include mq(tablet) {
+		font-size: 2.25rem;
+	}
+}
+
+h3 {
+	font-size: 1.75rem;
+	line-height: 2rem;
+	margin-block: 1rem;
+}
+
+header,
+article {
+	>.wrap {
+		margin-inline: auto;
+		padding: 1rem #{$gutter};
+		max-width: #{$maxW};
+	}
+}
+
+article {
+	max-width: $maxW;
+	margin-inline: auto;
+	corner-shape: bevel;
+	border-radius: .5rem 1rem;
+
+	&:nth-of-type(odd) {
+		@extend .dark;
+	}
+
+	&:last-of-type {
+		border-radius: .5rem 1rem 0 0;
+	}
+}
+
+p,
+li {
+	font-size: 1.2rem;
+}
+
+.brand-1 {
+	color: var(--brand-1);
 }

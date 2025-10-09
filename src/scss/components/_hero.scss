@@ -1,0 +1,119 @@
+@use "../variables" as *;
+@use "../functions" as *;
+@use "../mixins" as *;
+
+.hero {
+	$grad2: rgba(var(--brand-1-rgb), 0.25);
+	// background-image: linear-gradient(to bottom, var(--soft-white), $grad2);
+	// background-color: var(--soft-white);
+	color: var(--brand-2);
+	margin-block: 0;
+	padding-bottom: 1rem;
+	min-height: 14rem;
+	display: flex;
+	align-items: center;
+}
+
+.wrap,
+.grid {
+	max-width: $maxW;
+	margin-inline: auto;
+}
+
+.grid {
+	padding-block: 1rem;
+	display: grid;
+	grid-template-columns: auto 1fr;
+	grid-template-rows: repeat(2, auto);
+	grid-template-areas:
+		"img"
+		"h2"
+		"p";
+	align-items: center;
+	justify-content: space-around;
+	margin-inline: 2rem;
+	row-gap: 1rem;
+
+	@include mq(tablet) {
+		column-gap: 1rem;
+		grid-template-areas:
+			"img h2"
+			"img p";
+		row-gap: 0;
+	}
+
+	img {
+		margin-block: 0;
+	}
+
+	h1,
+	h2 {
+		margin-block: 0;
+	}
+
+	h1 {
+		grid-area: img;
+		text-align: center;
+	}
+
+	h2 {
+		grid-area: h2;
+		text-align: center;
+	}
+
+	p {
+		grid-area: p;
+		@include text-wrap(pretty);
+		text-align: center;
+		font-size: 1.1rem;
+		margin-block: 0;
+	}
+}
+
+.logo {
+	width: initial;
+	max-width: 100%;
+
+	.va-1 {
+		fill: var(--brand-1);
+	}
+
+	.va-2 {
+		fill: var(--brand-2);
+	}
+
+	.va-3 {
+		fill: var(--brand-1);
+	}
+
+	&.mobile {
+		svg {
+			margin: auto;
+		}
+
+		&,
+		&>svg {
+			height: 110px;
+		}
+	}
+
+	&.desktop {
+		width: 100px;
+		height: 100px;
+		display: none;
+	}
+
+	@include mq(tablet) {
+		&.mobile {
+			display: none;
+		}
+
+		&.desktop {
+			display: block;
+		}
+	}
+
+	svg {
+		max-width: 100%;
+	}
+}
