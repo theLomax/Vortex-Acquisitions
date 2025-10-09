@@ -3,5 +3,5 @@ node_modules
 src\pug\generated
 
 # Lock files
-pnpm-lock.yaml
+# pnpm-lock.yaml
 package-lock.json
