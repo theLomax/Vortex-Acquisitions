@@ -1,7 +1,8 @@
 {
 	"teamMembers": [
 		{
-			"name": "Michelle Hood",
+			"fName": "Michelle",
+			"lName": "Hood",
 			"rank": 1,
 			"active": true,
 			"titles": [
@@ -17,7 +18,8 @@
 			]
 		},
 		{
-			"name": "Thomas Hood",
+			"fName": "Thomas",
+			"lName": "Hood",
 			"rank": 2,
 			"active": true,
 			"titles": [
@@ -34,7 +36,8 @@
 			]
 		},
 		{
-			"name": "Ray Hartsock",
+			"fName": "Ray",
+			"lName": "Hartsock",
 			"rank": 3,
 			"active": true,
 			"titles": [
@@ -50,7 +53,8 @@
 			]
 		},
 		{
-			"name": "Sherrie Hartsock",
+			"fName": "Sherrie",
+			"lName": "Hartsock",
 			"rank": 4,
 			"active": true,
 			"titles": [
