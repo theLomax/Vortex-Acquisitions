@@ -13,23 +13,27 @@ $maxW: 1000px;
 $gutter: 1.5rem;
 
 :root {
-	--bg: #{$white};
-	--bg-offset: #{add-alpha($black, 0.1)};
-	--text: #{$black};
 	--brand-1: #{$brand-primary};
 	--brand-1-rgb: 43, 101, 131;
 	--brand-2: #{$brand-dark};
+	--bg: #{$white};
+	--bg-2: #2b658355;
+	--dark: var(--brand-1);
+	--bg-offset: #{add-alpha($black, 0.1)};
+	--text: #{$black};
 	--soft-white: #eee;
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--bg: #1b2d3b;
-		--bg-offset: #{add-alpha($white, 0.1)};
-		--text: var(--brand-2);
-		--brand-1: #4581a1;
+		--brand-1: #{$brand-primary};
 		--brand-1-rgb: 69, 129, 161;
 		--brand-2: #c4c6d4;
+		--bg: #{$brand-dark};
+		--bg-2: #00000055;
+		--dark: #333;
+		--bg-offset: #{add-alpha($white, 0.1)};
+		--text: var(--brand-2);
 		--soft-white: #131a20 ;
 	}
 }

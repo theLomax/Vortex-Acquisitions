@@ -31,6 +31,9 @@
 
 		&:nth-of-type(odd) {
 			@extend .dark;
+			.contrast {
+				color: #{var(--soft-white)};
+			}
 		}
 	}
 

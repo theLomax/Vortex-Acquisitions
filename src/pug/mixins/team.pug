@@ -17,7 +17,7 @@ mixin team(member)
 						each title, i in member.titles
 							span= title
 							if i < member.titles.length - 1
-								span &nbsp;#[strong.brand-1 |]&nbsp;
+								span &nbsp;#[span.contrast |]&nbsp;
 
 				//- Safe summary
 				if member.summary
@@ -30,4 +30,4 @@ mixin team(member)
 						each spec, i in member.specialties
 							span.nowrap= spec
 							if i < member.specialties.length - 1
-								span !{' '}#[span.brand-1 •]&nbsp;
+								span !{' '}#[span.contrast •]&nbsp;

@@ -2,19 +2,24 @@
 
 .star-method {
 	ul {
-		li {
-			padding-left: .5rem;
+		display: flex;
+		flex-direction: column;
+		row-gap: .5rem;
 
+	li {
+		padding-left: .5rem;
+
+		&::marker {
+			font-family: icomoon;
+			content: '\e9d9';
+			color: var(--brand-1);
+		}
+
+		&:nth-of-type(even) {
 			&::marker {
-				font-family: icomoon;
-				content: '\e9d9';
-			}
-
-			&:nth-of-type(even) {
-				&::marker {
-					content: '\e9d7';
-				}
+				content: '\e9d7';
 			}
 		}
 	}
+}
 }
