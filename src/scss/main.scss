@@ -24,6 +24,15 @@ body {
 	font-style: normal;
 }
 
+a {
+	color: unset;
+	text-decoration: none;
+	text-underline-offset: .25rem;
+	&:hover {
+	text-decoration: underline;
+	}
+}
+
 h1,
 h2,
 h3,
