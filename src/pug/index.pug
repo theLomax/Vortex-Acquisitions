@@ -4,18 +4,23 @@ include components/page
 include mixins/team
 
 block content
-	+header()
-		h1 Vortex Acquisitions, LLC
-		h2 We Buy Boring Businesses — Quietly. Ethically. Fast.
-		p Whether you're ready to retire, step back, or simply take a breath, we help business owners exit their companies with confidence — and peace of mind.
-	+hero("Welcome!", "This is our first page.")
+	+hero()
+		.wrap
+			.grid
+				h1
+					.logo.mobile(aria-description="Vortex Acquisitions, LLC")
+						include ../assets/images/Vortex-logo-h.svg
+					.logo.desktop(aria-description="Vortex Acquisitions, LLC")
+						include ../assets/images/Vortex-logo.svg
+				h2 We Buy Boring Businesses — #[span.nowrap Quietly. Ethically. Fast.]
+				p Whether you're ready to retire, step back, or simply take a breath, we help business owners exit their companies with confidence — and peace of mind.
 
 	section
 
 		+article('about-us')
 			h2 Who We Are
 			p You’ve built something valuable. We’re here to help you transition it to the right hands.
-			p We are a small, trustworthy team — not brokers, not private equity — that acquires healthy, profitable service-based businesses #[em ($500K–$5M revenue)] and helps owners move forward without losing what matters most.
+			p We are a small, trustworthy team — not brokers, not private equity — that acquires healthy, profitable service-based businesses #[span #[em ($500K–$5M revenue)]] and helps owners move forward without losing what matters most.
 
 		+article('star-method')
 			h2 The STAR Method™
@@ -45,16 +50,18 @@ block content
 				li Close &amp; celebrate your next chapter
 
 		+article('team')
-			h3 Meet the Team
+			h2 Meet the Team
 
+		.team-loop
 			each member in teamMembers
 				+team(member)
 
-		+article('contact')
-			h2 Ready to Talk?
-			p Let’s have a confidential, no-pressure conversation about what’s next.
-			| 📧 teams@vortexacquisitionsllc.com
-			| 📞 972-200-9263
-
+	+article('contact')
+		h2 Ready to Talk?
+		p Let’s have a confidential, no-pressure conversation about what’s next.
+			br
+			span.contact-split
+				span #[span.icon-envelope] teams@vortexacquisitionsllc.com
+				span #[span.icon-phone] 972-200-9263
 
 	+footer("© 2025 | All rights reserved")
