@@ -8,7 +8,7 @@ jobs:
     name: 📱 Deploy production build to hosting
     runs-on: ubuntu-latest
     steps:
-      - name: 📟📡 Get latest code from Github
+      - name: 📟 ☵☲☵ 📡 Get latest code from Github
         uses: actions/checkout@v3
 
       - name: 🔧 Setup PNPM
