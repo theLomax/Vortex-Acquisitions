@@ -7,7 +7,7 @@ mixin team(member)
 
 	.team-member(data-rank=member.rank)
 		.entry
-			img(src=`assets/images/team/${member.lName}_${member.fName}.jpg`, alt=member.fName)
+			img(src=`assets/images/team/${member.lName.toLowerCase()}_${member.fName.toLowerCase()}.jpg`, alt=`${member.fName} ${member.lName}`)
 			div
 				h3 #{member.fName} #{member.lName}
 
