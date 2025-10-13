@@ -10,6 +10,8 @@ jobs:
     steps:
       - name: 📟 ☵☲☵ 📡 Get latest code from Github
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Full history for better metadata
 
       - name: 🔧 Setup PNPM
         uses: pnpm/action-setup@v4
