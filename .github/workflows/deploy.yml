@@ -36,6 +36,25 @@ jobs:
       - name: 🔩 Build project
         run: pnpm run build
 
+      - name: 🧪 Verify build output files
+        run: |
+          test -d dist && echo "📇 dist/ directory created"
+          test -f dist/index.html && echo "🌐 HTML generated"
+          test -f dist/styles.css && echo "🎨 CSS compiled"
+          test -f dist/app.js && echo "📦 JS bundled"
+
+      - name: Validate HTML
+        run: |
+          npx html-validate dist/*.html
+
+      - name: Lint CSS
+        run: |
+          npx stylelint "dist/**/*.css"
+
+      - name: Lint JS
+        run: |
+          npx eslint dist/**/*.js --quiet
+
       - name: 🚀 Deploy to cPanel via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
