@@ -7,6 +7,9 @@ jobs:
   deploy:
     name: 📱 Deploy production build to hosting
     runs-on: ubuntu-latest
+    env:
+      DATE_TIME: ${{ toJson(github.event.head_commit.timestamp) }}
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
     steps:
       - name: 📟 ☵☲☵ 📡 Get latest code from Github
         uses: actions/checkout@v3
@@ -62,3 +65,30 @@ jobs:
           username: ${{ secrets.VORTEX_FTP_UNAME }}
           password: ${{ secrets.VORTEX_FTP_PW }}
           local-dir: dist/
+
+    # Email notifications
+    # - name: 📢 Send success notification
+    #   if: success()
+    #   uses: dawidd6/action-send-mail@v2
+    #   with:
+    #     server_address: ${{ secrets.SMTP_SERVER }}
+    #     server_port: 465
+    #     username: ${{ secrets.SMTP_USERNAME }}
+    #     password: ${{ secrets.SMTP_PASSWORD }}
+    #     subject: "🎯 Deployment Successful"
+    #     body: "The site was successfully deployed at ${{ env.DATE_TIME }}."
+    #     to: ${{ secrets.EMAIL_TO }}
+    #     from: "GitHub Actions"
+
+    # - name: 📢 Send failure notification
+    #   if: failure()
+    #   uses: dawidd6/action-send-mail@v2
+    #   with:
+    #     server_address: ${{ secrets.SMTP_SERVER }}
+    #     server_port: 465
+    #     username: ${{ secrets.SMTP_USERNAME }}
+    #     password: ${{ secrets.SMTP_PASSWORD }}
+    #     subject: "⛔ Deployment Failed"
+    #     body: "Check the logs for details."
+    #     to: ${{ secrets.EMAIL_TO }}
+    #     from: "GitHub Actions"
