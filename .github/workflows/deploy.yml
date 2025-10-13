@@ -43,8 +43,8 @@ jobs:
         run: |
           test -d dist && echo "📇 dist/ directory created"
           test -f dist/index.html && echo "🌐 HTML generated"
-          test -f dist/styles.css && echo "🎨 CSS compiled"
-          test -f dist/app.js && echo "📦 JS bundled"
+          test -f dist/css/main.css && echo "🎨 CSS compiled"
+          test -f dist/js/main.js && echo "📦 JS bundled"
 
       - name: Validate HTML
         run: |
