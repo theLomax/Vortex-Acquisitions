@@ -61,10 +61,13 @@ jobs:
       - name: 🚀 Deploy to cPanel via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: ${{ secrets.VORTEX_FTP_SERVER }}
-          username: ${{ secrets.VORTEX_FTP_UNAME }}
-          password: ${{ secrets.VORTEX_FTP_PW }}
-          local-dir: dist/
+          server:     ${{ secrets.VORTEX_FTP_SERVER }}
+          username:   ${{ secrets.VORTEX_FTP_UNAME }}
+          password:   ${{ secrets.VORTEX_FTP_PW }}
+          local-dir:  dist/
+          server-dir: /public_html
+          port:       21
+          timeout:    60000
 
     # Email notifications
     # - name: 📢 Send success notification
