@@ -75,7 +75,7 @@ article {
 	border-radius: .5rem 1rem;
 
 	&:nth-of-type(odd) {
-		@extend .dark;
+		@include dark;
 	}
 
 	&:last-of-type {

@@ -2,5 +2,5 @@
 @use '../helpers';
 
 footer {
-	@extend .dark;
+	@include dark;
 }

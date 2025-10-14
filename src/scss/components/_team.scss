@@ -25,14 +25,16 @@
 		corner-shape: bevel;
 		border-radius: .5rem 1rem;
 
-		&:first-of-type {
-			border-radius: 0 0 .5rem 1rem;
-		}
+			&:first-of-type {
+				border-radius: 0 0 .5rem 1rem;
+			}
 
-		&:nth-of-type(odd) {
-			@extend .dark;
-			.contrast {
-				color: #{var(--soft-white)};
+			&:nth-of-type(odd) {
+				@include dark;
+
+				.contrast {
+					color: #{var(--soft-white)};
+				}
 			}
 		}
 	}
