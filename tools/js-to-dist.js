@@ -10,7 +10,7 @@ const outDir = join(__dirname, '..', 'dist', 'js');
 
 try {
 	if (!fs.existsSync(srcDir)) {
-		console.error('🚨 Source directory not found:', srcDir);
+		console.error('🚨  Source directory not found:', srcDir);
 		process.exit(1);
 	}
 
@@ -18,7 +18,7 @@ try {
 	const files = fs.readdirSync(srcDir).filter(f => f.endsWith('.js'));
 
 	if (files.length === 0) {
-		console.log('⚠️ No JS files found in', srcDir);
+		console.log('⚠️  No JS files found in', srcDir);
 		process.exit(0);
 	}
 
@@ -26,11 +26,11 @@ try {
 		const srcFile = join(srcDir, f);
 		const destFile = join(outDir, f);
 		fs.copyFileSync(srcFile, destFile);
-		console.log(`📄|📄 Copied: ${f}`);
+		console.log(`📄 |📄  Copied: ${f}`);
 	});
 
-	console.log(`🎉 Successfully copied ${files.length} JS file(s) to ${outDir}`);
+	console.log(`🎉  Successfully copied ${files.length} JS file(s) to ${outDir}`);
 } catch (err) {
-	console.error('⛔ Error copying JS files:', err.message);
+	console.error('⛔  Error copying JS files:', err.message);
 	process.exit(1);
 }
