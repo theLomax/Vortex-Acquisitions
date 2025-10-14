@@ -65,7 +65,7 @@ jobs:
           username:   ${{ secrets.VORTEX_FTP_UNAME }}
           password:   ${{ secrets.VORTEX_FTP_PW }}
           local-dir:  dist/
-          server-dir: /public_html
+          server-dir: /public_html/
           port:       21
           timeout:    60000
 
