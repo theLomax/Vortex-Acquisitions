@@ -8,13 +8,17 @@
 		"clean": "rimraf dist",
 		"build:team": "node tools/parse-team.js",
 		"build:html": "pug src/pug/index.pug -o dist -P --obj src/data/team-processed.json",
-		"build:css": "sass src/scss/main.scss dist/css/main.css --style=expanded",
+		"build:css": "sass src/scss/main.scss dist/css/main.css --style=expanded && stylelint \"dist/**/*.css\" --fix",
 		"build:js": "node tools/js-to-dist.js",
 		"build:assets": "cpx \"src/**/*.{png,jpg,jpeg,gif,svg,ttf,woff,eot,woff2}\" dist",
-		"build": "pnpm clean && pnpm build:team && concurrently \"pnpm build:html\" \"pnpm build:css\" \"pnpm build:js\" \"pnpm build:assets\"",
+		"build": "pnpm clean && pnpm build:team && pnpm pug && node tools/fixVoids.js && pnpm sass && pnpm js && pnpm copy:assets",
 		"watch": "concurrently \"chokidar \\\"src/**/*.pug\\\" -c \\\"pnpm build:html\\\" --polling --awaitWriteFinish\" \"chokidar \\\"src/**/*.scss\\\" -c \\\"pnpm build:css\\\" --polling --awaitWriteFinish\" \"chokidar \\\"src/**/*.js\\\" -c \\\"pnpm build:js\\\" --polling --awaitWriteFinish\" \"chokidar \\\"src/**/*.{png,jpg,jpeg,gif,svg}\\\" -c \\\"pnpm build:assets\\\" --polling --awaitWriteFinish\"",
-		"serve": "browser-sync start --server dist --files \"dist/**/*\"",
-		"dev": "pnpm build && concurrently --raw --kill-others \"pnpm watch\" \"pnpm serve\""
+		"pug": "pug src/pug/index.pug -o dist -P --obj src/data/team-processed.json",
+		"sass": "sass src/scss/main.scss dist/css/main.css --style=expanded && postcss dist/css/main.css -o dist/css/main.css",
+		"js": "node tools/js-to-dist.js",
+		"copy:assets": "cpx \"src/**/*.{png,jpg,jpeg,gif,svg,ttf,woff,eot,woff2}\" dist",
+		"serve": "browser-sync start --no-kill-others --server dist --files \"dist/**/*\"",
+		"dev": "pnpm build && concurrently --kill-others --success first \"pnpm watch\" \"pnpm serve\""
 	},
 	"keywords": [],
 	"author": "",
@@ -26,10 +30,14 @@
 		"concurrently": "^9.2.1",
 		"cpx": "^1.5.0",
 		"live-server": "^1.2.2",
+		"postcss": "^8.5.6",
+		"postcss-between": "^1.0.6",
+		"postcss-cli": "^11.0.1",
 		"prettier": "^3.6.2",
 		"pug-cli": "1.0.0-alpha6",
 		"rimraf": "^6.0.1",
 		"sass": "^1.93.2",
-		"serve": "^14.2.5"
+		"serve": "^14.2.5",
+		"stylelint-config-standard": "^39.0.1"
 	}
 }
