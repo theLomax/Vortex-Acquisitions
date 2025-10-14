@@ -52,7 +52,7 @@ jobs:
 
       - name: Lint CSS
         run: |
-          npx stylelint "dist/**/*.css"
+          npx stylelint "dist/**/*.css" --fix
 
       - name: Lint JS
         run: |
