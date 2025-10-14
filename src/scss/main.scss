@@ -1,5 +1,6 @@
 // @use "functions";
 // @use "mixins";
+@use "fonts";
 @use "variables" as *;
 @use "mixins" as *;
 @use "helpers" as *;
@@ -9,7 +10,6 @@
 @use "components/star-method";
 @use "components/team";
 @use "components/contact";
-@use "fonts";
 
 body {
 	margin-block: 0;
@@ -18,7 +18,7 @@ body {
 	background-color: var(--bg);
 	color: var(--text);
 	// font
-	font-family: "Red Hat Display", sans-serif;
+	font-family: 'Red Hat Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-optical-sizing: auto;
 	font-weight: normal;
 	font-style: normal;
@@ -38,7 +38,7 @@ h1,
 h2,
 h3,
 h4 {
-	font-family: "crimson pro";
+	font-family: "crimson pro", Georgia, 'Times New Roman', Times, serif;
 	font-weight: 500;
 	color: var(--brand-2);
 	margin-top: 0;
