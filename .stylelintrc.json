@@ -1,0 +1,20 @@
+{
+	"extends": [
+		"stylelint-config-standard"
+	],
+	"rules": {
+		"color-function-notation": ["modern", { "ignore": ["with-var-inside"] }],
+		"color-hex-alpha": null,
+		"color-hex-length": null,
+		"declaration-block-no-redundant-longhand-properties": null,
+		"font-family-no-missing-generic-family-keyword": [true, {
+			"ignoreFontFamilies": ["icomoon"]
+		}],
+		"property-no-unknown": [true, {
+			"ignoreProperties": ["corner-shape"]
+		}],
+		"rule-empty-line-before": ["always", { "except": ["first-nested"] }],
+		"at-rule-empty-line-before": "always",
+		"no-descending-specificity": null
+	}
+}
